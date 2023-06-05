@@ -19,10 +19,14 @@ public class BasePage {
     }
     protected void clickElementByXpath(String xpath){
 
-        findElementBeXpath(xpath).click();
+        findElementByXpath(xpath).click();
+    }
+    protected void clickElementByCSS(String CSS){
+
+        findElementByXpath(CSS).click();
     }
     protected void sendTextToElementByXpath(String xpath, String text){
-        findElementBeXpath(xpath).sendKeys(text);
+        findElementByXpath(xpath).sendKeys(text);
     }
     protected boolean elementExists(String CSS){
         try {
@@ -33,7 +37,7 @@ public class BasePage {
             return false;
         }
     }
-    protected WebElement findElementBeXpath(String xpath){
+    protected WebElement findElementByXpath(String xpath){
         WebElement element;
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         element= webDriver.findElement(By.xpath(xpath));
