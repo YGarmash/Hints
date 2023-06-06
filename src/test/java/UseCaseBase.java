@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 
 public class UseCaseBase {
-    private static WebDriver webDriver;
+    public static WebDriver webDriver;
     private static BasePage page;
 
     @BeforeAll
